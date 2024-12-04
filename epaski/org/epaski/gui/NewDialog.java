@@ -1,4 +1,4 @@
-package epaski.gui;
+package org.epaski.gui;
 
 import static javax.swing.SwingConstants.CENTER;
 

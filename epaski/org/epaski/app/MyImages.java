@@ -1,4 +1,4 @@
-package epaski.app;
+package org.epaski.app;
 
 
 public class MyImages {

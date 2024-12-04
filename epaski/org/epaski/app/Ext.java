@@ -1,9 +1,9 @@
-package epaski.app;
+package org.epaski.app;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 
-import epaski.gui.Gui;
+import org.epaski.gui.Gui;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -16,7 +16,7 @@ public class Ext {
 	public Ext() {
 		
 	}
-	
+//	
 	public Ext(Gui gui) {
 		this.gui = gui;
 	}

@@ -1,13 +1,13 @@
-package epaski.send;
+package org.epaski.send;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.Properties;
 
-import epaski.app.Ext;
-import epaski.app.ExtFilter;
-import epaski.gui.Gui;
+import org.epaski.app.Ext;
+import org.epaski.app.ExtFilter;
+import org.epaski.gui.Gui;
 import jakarta.mail.Address;
 import jakarta.mail.Session;
 import jakarta.mail.Transport;

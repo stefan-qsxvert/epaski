@@ -1,4 +1,4 @@
-package epaski.app;
+package org.epaski.app;
 
 import net.lingala.zip4j.ZipFile;
 import net.lingala.zip4j.model.ZipParameters;
@@ -7,7 +7,7 @@ import net.lingala.zip4j.model.enums.CompressionMethod;
 import net.lingala.zip4j.model.enums.EncryptionMethod;
 import java.io.*;
 
-import epaski.gui.Gui;
+import org.epaski.gui.Gui;
 
 public class GenZipp{
 	Gui gui;

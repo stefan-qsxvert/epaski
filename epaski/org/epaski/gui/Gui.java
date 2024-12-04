@@ -1,7 +1,7 @@
-package epaski.gui;
+package org.epaski.gui;
 
-import epaski.app.EPSwingWorker;
-import epaski.app.Ext;
+import org.epaski.app.EPSwingWorker;
+import org.epaski.app.Ext;
 
 import javax.swing.*;
 import java.awt.*;

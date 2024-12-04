@@ -1,4 +1,4 @@
-package epaski.send;
+package org.epaski.send;
 
 import jakarta.activation.DataHandler;
 import jakarta.activation.DataSource;
@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.stream.Collectors;
 
-import epaski.app.ExtFilter;
+import org.epaski.app.ExtFilter;
 
 public class Attach {
 

@@ -1,4 +1,4 @@
-package epaski.app;
+package org.epaski.app;
 
 import java.io.File;
 import java.io.FilenameFilter;

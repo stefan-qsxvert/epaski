@@ -1,5 +1,5 @@
 
-package epaski.send;
+package org.epaski.send;
 
 import jakarta.mail.Authenticator;
 import jakarta.mail.PasswordAuthentication;

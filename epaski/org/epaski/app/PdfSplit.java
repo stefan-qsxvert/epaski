@@ -1,10 +1,10 @@
-package epaski.app;
+package org.epaski.app;
 
 
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 
-import epaski.gui.Gui;
+import org.epaski.gui.Gui;
 
 import java.io.File;
 

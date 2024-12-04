@@ -1,4 +1,4 @@
-package epaski.send;
+package org.epaski.send;
 
 import jakarta.mail.Multipart;
 import jakarta.mail.*;
@@ -6,7 +6,7 @@ import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.mail.internet.MimeMultipart;
-import epaski.gui.Gui;
+import org.epaski.gui.Gui;
 
 import java.util.Properties;
 

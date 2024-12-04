@@ -1,9 +1,9 @@
-package epaski.app;
+package org.epaski.app;
 
 import javax.swing.*;
 
-import epaski.gui.Gui;
-import epaski.send.Push;
+import org.epaski.gui.Gui;
+import org.epaski.send.Push;
 
 public class EPSwingWorker extends SwingWorker<Gui, Integer> {
 	
