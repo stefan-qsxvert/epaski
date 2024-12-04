@@ -8,15 +8,16 @@ import epaski.send.Push;
 public class epaski {
 	
 	public Gui gui = new Gui();
-    //Push push = new Push(gui);
-	
+    Push push = new Push(gui);
+
 	public static void main(String[] args) {
+		System.out.println(System.getProperties());
 		epaski epaski = new epaski();
-		epaski.startGui();
-		}
+		epaski.startGui();		
+	}
 
     public void startGui(){ //start aplikacji
-
+    		
         File[] folder = new File[7];
          folder[0] = new File("c:/epaski");
          folder[1] = new File("c:/epaski/msg");
@@ -34,8 +35,6 @@ public class epaski {
          gui.okno();
          gui.setGui(gui);
          
-
-
    }
 
 }
