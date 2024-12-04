@@ -33,6 +33,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-23.0.1"/>
-	<classpathentry kind="lib" path="epaski/src/epaski/img/logo.png"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
