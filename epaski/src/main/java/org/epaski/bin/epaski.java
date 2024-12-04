@@ -11,7 +11,7 @@ public class epaski {
 //    Push push = new Push(gui);
 
 	public static void main(String[] args) {
-		System.out.println(System.getProperties());
+//		System.out.println(System.getProperties());
 		
 		epaski epaski = new epaski();
 		epaski.startGui();		
