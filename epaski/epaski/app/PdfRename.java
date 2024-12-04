@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import epaski.gui.Gui;
+
+import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 
@@ -43,7 +45,7 @@ Gui gui;
             PDDocument document = null;
             try {
                 file = new File(gui.getTextFieldText(1) + plikName[i]);
-                document = PDDocument.load(file);
+                document = Loader.loadPDF(file);
                 pdfTextStripper = new PDFTextStripper();
                 fileText = new String(pdfTextStripper.getText(document));
                 document.close();
@@ -66,8 +68,8 @@ Gui gui;
             File pasek = new File(gui.getTextFieldText(1) + pdfName + ".pdf");
             if (pasek.exists() && !pasek.getName().equals(file.getName())) {
                 try {
-                    PDDocument pdd0 = PDDocument.load(pasek);
-                    PDDocument pdd = PDDocument.load(file);
+                    PDDocument pdd0 = Loader.loadPDF(pasek);
+                    PDDocument pdd = Loader.loadPDF(file);
                     pdd0.addPage(pdd.getPage(0));
                     pdd0.save(pasek);
                     pdd.close();

@@ -1,6 +1,7 @@
 package epaski.app;
 
 
+import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 
 import epaski.gui.Gui;
@@ -36,7 +37,7 @@ public class PdfSplit{
 
             try {
                 file = new File(gui.getTextFieldText(9) + paskiPdfLista[i].toString());
-                document = PDDocument.load(file);
+                document = Loader.loadPDF(file);
                 //splitter = new Splitter();
                 //Pages = splitter.split(document);
                 //iterator = Pages.listIterator();
