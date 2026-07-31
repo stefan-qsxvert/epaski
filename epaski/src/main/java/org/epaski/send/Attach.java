@@ -1,16 +1,17 @@
 package org.epaski.send;
 
-import jakarta.activation.DataHandler;
-import jakarta.activation.DataSource;
-import jakarta.activation.FileDataSource;
-import jakarta.mail.BodyPart;
-import jakarta.mail.internet.MimeBodyPart;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.stream.Collectors;
 
 import org.epaski.app.ExtFilter;
+
+import jakarta.activation.DataHandler;
+import jakarta.activation.DataSource;
+import jakarta.activation.FileDataSource;
+import jakarta.mail.BodyPart;
+import jakarta.mail.internet.MimeBodyPart;
 
 public class Attach {
 

@@ -11,9 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class NewDialog implements ActionListener{
-	
+
     private JDialog dialog;
-	
+
 	public void msg(String msg) {
 	dialog = new JDialog();
     JLabel label1 = new JLabel(msg);
@@ -37,12 +37,12 @@ public class NewDialog implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-	
+
     if (e.getActionCommand().equals("OK!")){
         dialog.dispose();
     }
-		
+
 	}
-	
+
 
 }

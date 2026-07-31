@@ -1,29 +1,32 @@
 package org.epaski.app;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+
+import org.epaski.gui.Gui;
+
 import net.lingala.zip4j.ZipFile;
 import net.lingala.zip4j.model.ZipParameters;
 import net.lingala.zip4j.model.enums.CompressionLevel;
 import net.lingala.zip4j.model.enums.CompressionMethod;
 import net.lingala.zip4j.model.enums.EncryptionMethod;
-import java.io.*;
-
-import org.epaski.gui.Gui;
 
 public class GenZipp{
 	Gui gui;
-	
+
 	public GenZipp() {
 	}
-	
+
 	public GenZipp(Gui gui){
 		this.gui = gui;
-		
+
 	}
 
     private String sciezkaPliki;
     private String sciezkaHasla;
     private String pass;
-    
+
     public void setSciezkaPliki(String sciezka){
         this.sciezkaPliki = sciezka;
     }
@@ -36,7 +39,7 @@ public class GenZipp{
 	}
 
 	public void genZipp() {
-		
+
 		Boolean raport = gui.getCheckBoxSelected(4);
 
         sciezkaPliki = gui.getTextFieldText(1);
@@ -50,7 +53,7 @@ public class GenZipp{
         filter.setExt(".pdf");
         File folder = new File(gui.getTextFieldText(1));
         String[] pliki = folder.list(filter);
-        	
+
         gui.progressBar[1].setMinimum(0);
         gui.progressBar[1].setMaximum(pliki.length);
 
@@ -78,10 +81,10 @@ public class GenZipp{
                 System.out.println(e.getMessage());
                 ext.log("logErr.txt", pliki[i].toString() + " nie spakowany");
             }
-            
+
           try {
          if(zipped){
-           
+
 		  if (raport){
                 System.out.println( pliki[i].toString() + " spakowany");
 			}else{}

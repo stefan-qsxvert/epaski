@@ -8,6 +8,7 @@ import java.util.Properties;
 import org.epaski.app.Ext;
 import org.epaski.app.ExtFilter;
 import org.epaski.gui.Gui;
+
 import jakarta.mail.Address;
 import jakarta.mail.Session;
 import jakarta.mail.Transport;
@@ -16,13 +17,13 @@ import jakarta.mail.internet.InternetAddress;
 public class Push{
 
 	Gui gui;
-	
+
 	public Push() {
 	}
 	public Push(Gui gui){
 		this.gui = gui;
 	}
-	
+
 	public void sendMail() {
 		Ext ext = new Ext();
         ext.logBcp("logNfo.txt");
@@ -40,14 +41,14 @@ public class Push{
         plik = folderZippy.list(filter);
         gui.progressBar[2].setMinimum(0);
         gui.progressBar[2].setMaximum(plik.length);
-        
+
         String[] smtp = gui.getTextFieldText(2).split(":");
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.debug", String.valueOf(gui.getCheckBoxSelected(0)));
         props.put("mail.smtp.host", smtp[0]);
         props.put("mail.smtp.user", gui.getTextFieldText(3));
-        
+
         if (gui.getCheckBoxSelected(6)) {
         	props.put("mail.smtp.starttls.enable", "true");
         	props.put("mail.smtp.port", smtp[1]);
@@ -58,16 +59,16 @@ public class Push{
           }else {}
           if (gui.getCheckBoxSelected(8)) {
           }else {}
-          
-        
-        
+
+
+
         if (gui.getCheckBoxSelected(1)) {
             props.put("mail.smtp.proxy.host", gui.getTextFieldText(6));
             props.put("mail.smtp.proxy.port", gui.getTextFieldText(7));
             props.put("mail.smtp.proxy.user", gui.getTextFieldText(8));
             props.put("mail.smtp.proxy.password", String.valueOf(gui.getPasswordFildText(1)));
         }
-        
+
         Auth auth = new Auth(gui.getTextFieldText(3),String.valueOf(gui.getPasswordFildText(0)));
         Session session = Session.getInstance(props, auth);
 
@@ -77,7 +78,7 @@ public class Push{
           		tr = session.getTransport();
         		tr.connect();
 				System.out.println("connected: " + tr.isConnected());
-             }else {}   
+             }else {}
         	} catch (Exception e) {
         		e.toString();
 		}
@@ -85,7 +86,7 @@ public class Push{
         for (int i = 0; i < plik.length; i++) {
         	gui.progressBar[2].setValue(i+1);
         		Mail mail = null;
-        		
+
         		try {
                 BufferedReader fileReader = new BufferedReader( new FileReader(gui.getTextFieldText(0) + plik[i].toString().substring(0, plik[i].toString().lastIndexOf(".")) + ".txt"));
                 nfo = fileReader.readLine().split(",");
@@ -98,10 +99,10 @@ public class Push{
                 mail.setSciezka(gui.getTextFieldText(1));
                 mail.setPlik(plik[i]);
                 mail.mailPrepare();
- 
+
                 Address[] addr = new Address[1];
                 addr[0] = new InternetAddress(nfo[1]);
-               
+
                 if (!gui.getCheckBoxSelected(2)) {
                 tr.sendMessage(mail.mailPrepare(), addr);
                     ext.log("logSent.txt" , plik[i].toString() + " wysłany na adres: " + nfo[1]);
@@ -116,14 +117,14 @@ public class Push{
     				} catch (Exception e) {
     				}
                 }
-        		
+
         		}catch (Exception e){
             	System.out.println(e.toString());
                 //System.out.println(plik[i].toString() + " błąd wysyłki");
                 ext.log("logErr.txt" , plik[i].toString() + " nie wysłany, brak nfo");
             }
         }
-        
+
         try {
         	if (!gui.getCheckBoxSelected(2)) {
         	tr.close();

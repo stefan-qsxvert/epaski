@@ -4,11 +4,10 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import org.epaski.gui.Gui;
-
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
+import org.epaski.gui.Gui;
 
 public class PdfRename {
 Gui gui;
@@ -19,7 +18,7 @@ Gui gui;
 	public PdfRename(Gui gui){
 		this.gui = gui;
 	}
-	
+
 	public void pdfRename(){
 
         Ext ext = new Ext();
@@ -103,5 +102,5 @@ Gui gui;
             }
         }
 	}
-	
+
 }

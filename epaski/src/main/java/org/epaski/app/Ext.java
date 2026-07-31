@@ -1,31 +1,31 @@
 package org.epaski.app;
 
-import javax.swing.*;
-import javax.swing.filechooser.FileSystemView;
-
-import org.epaski.gui.Gui;
-
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Date;
 
+import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
+
+import org.epaski.gui.Gui;
+
 public class Ext {
 	Gui gui;
-	
+
 	public Ext() {
-		
+
 	}
-//	
+//
 	public Ext(Gui gui) {
 		this.gui = gui;
 	}
-	
+
 	private Boolean silent = true;
-	
+
     public String passy(String sciezka) {
         String plik = null;
-        
+
 
         try {
             BufferedReader fileReader = new BufferedReader( new FileReader(sciezka));

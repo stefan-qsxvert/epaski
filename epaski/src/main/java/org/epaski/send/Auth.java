@@ -12,7 +12,8 @@ public class Auth extends Authenticator {
         this.login = login;
         this.haslo = haslo;
     }
-    protected PasswordAuthentication getPasswordAuthentication() {
+    @Override
+	protected PasswordAuthentication getPasswordAuthentication() {
         return new PasswordAuthentication(login, haslo);
     }
 }

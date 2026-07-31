@@ -6,7 +6,7 @@ import org.epaski.gui.Gui;
 import org.epaski.send.Push;
 
 public class EPSwingWorker extends SwingWorker<Gui, Integer> {
-	
+
 	Gui gui;
 	Integer task;
 
@@ -30,7 +30,7 @@ public class EPSwingWorker extends SwingWorker<Gui, Integer> {
     		rename.pdfRename();
     		done();
     		}catch(Exception e) {
-    			
+
     		}
     		gui.setSplitCtrl(true);
     		break;

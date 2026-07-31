@@ -1,24 +1,23 @@
 package org.epaski.app;
 
 
+import java.io.File;
+
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
-
 import org.epaski.gui.Gui;
-
-import java.io.File;
 
 
 public class PdfSplit{
 	private Gui gui;
-	
+
 	public PdfSplit(){
 	}
-	
+
 	public PdfSplit(Gui gui){
 		this.gui = gui;
 	}
-	
+
     public void pdfSplit() {
 
         Integer d = 0;
@@ -26,9 +25,9 @@ public class PdfSplit{
 
         File paskiPdf = new File(gui.getTextFieldText(9));
         String[] paskiPdfLista = paskiPdf.list();
-        
+
         for (int i = 0 ; i < paskiPdfLista.length; i++) {
-        	              
+
             PDDocument document = null;
             //Splitter splitter = null;
             //List<PDDocument> Pages;
@@ -42,7 +41,7 @@ public class PdfSplit{
                 //Pages = splitter.split(document);
                 //iterator = Pages.listIterator();
                 //PDDocument pd = null;
-                
+
                 gui.progressBar[0].setMinimum(0);
                 gui.progressBar[0].setMaximum(document.getNumberOfPages());
                 gui.progressBar[0].setValue(0);

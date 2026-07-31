@@ -1,20 +1,22 @@
 package org.epaski.send;
 
-import jakarta.mail.Multipart;
-import jakarta.mail.*;
+import java.util.Properties;
 
+import org.epaski.gui.Gui;
+
+import jakarta.mail.Address;
+import jakarta.mail.Message;
+import jakarta.mail.Multipart;
+import jakarta.mail.Session;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.mail.internet.MimeMultipart;
-import org.epaski.gui.Gui;
-
-import java.util.Properties;
 
 public class Mail {
       private String od, temat, sciezka, plik, to;
 
       private Gui gui;
-      
+
       public Mail() {
       }
       public Mail(Gui gui) {
@@ -30,21 +32,21 @@ public class Mail {
      public void setTemat(String temat){
          this.temat = temat;
      }
-  
+
      public void setSciezka(String sciezka){
          this.sciezka = sciezka;
      }
      public void setPlik(String plik){
          this.plik = plik;
-     }	
-	
+     }
+
 	//public Message getMessage() {
 		//return message;
 	//}
 
     public Message mailPrepare() {
 
-       Properties props = new Properties();        
+       Properties props = new Properties();
        Auth auth = new Auth(null,null);
        Session session = Session.getInstance(props, auth);
        Attach attach = new Attach();
