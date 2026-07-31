@@ -20,23 +20,26 @@ public class DBWorker {
 
 	public void connectDB() {
 		
-		ip = "10.8.0.10";
-		dataBase = "mail";
+		ip = " ";
+		dataBase = " ";
 
-		String url = "jdbc:postgresql://"+ ip + "/" + dataBase;
+//		String url = "jdbc:postgresql://"+ ip + "/" + dataBase;
+		String url = "jdbc:mysql://"+ ip + "/" + dataBase;
 		
 		connectionState = false;
 		
 		try {
 
 			Object sharedObjects;
-			conn = DriverManager.getConnection(url, "mailuser", "adgjmpad"); 
+			conn = DriverManager.getConnection(url, " ", " "); 
 //					sharedObjects.getLoginScreen().getUserTextField().getText(), 
 //					sharedObjects.getLoginScreen().getPasswordField().getText());
-			System.out.println("Baza połączona!");
+			System.out.println("Połączona:" + !conn.isClosed());
+			conn.close();
+			System.out.println("0");
 		} catch (Exception e) {
 			System.out.println("Nie tym razem!");
-			//e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 	
