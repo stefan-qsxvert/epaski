@@ -55,7 +55,7 @@ public class Mail {
 
 
         try {
-            repalyTo[0] = new InternetAddress("stefan.abramek@grupaazoty.com");
+            repalyTo[0] = new InternetAddress("stefan.abramek@manester.org");
             Multipart multipart = new MimeMultipart();
             message = new MimeMessage(session);
             message.setFrom(new InternetAddress(od));

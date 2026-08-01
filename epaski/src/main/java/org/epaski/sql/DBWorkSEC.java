@@ -20,7 +20,11 @@ private Connection conn;
 		
 //		Connection conn = null;
 		
-		
+		ip = " ";
+		port = " ";
+		dataBase = "mail";
+		user = " ";
+		pass = " ";
 		
 //		String url = "jdbc:postgresql://"+ ip + "/" + dataBase;
 		String url = "jdbc:mysql://"+ ip + ":" + port + "/" + dataBase;

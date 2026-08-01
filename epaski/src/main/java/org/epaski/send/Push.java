@@ -60,8 +60,6 @@ public class Push{
           if (gui.getCheckBoxSelected(8)) {
           }else {}
 
-
-
         if (gui.getCheckBoxSelected(1)) {
             props.put("mail.smtp.proxy.host", gui.getTextFieldText(6));
             props.put("mail.smtp.proxy.port", gui.getTextFieldText(7));
