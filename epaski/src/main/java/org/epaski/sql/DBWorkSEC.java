@@ -6,25 +6,30 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.epaski.share.SharedData;
+
 public class DBWorkSEC {
 
 	
 
 private Connection conn;
 
-
+	private SharedData sharedData;
     private String dataBase, user, pass, port, ip;
 
+    public DBWorkSEC(SharedData sharedData) {
+    	this.sharedData = sharedData;
+    }
 
 	public void connectDB() {
 		
 //		Connection conn = null;
 		
-		ip = " ";
-		port = " ";
-		dataBase = "mail";
-		user = " ";
-		pass = " ";
+		ip = sharedData.getDbServer();
+		port = sharedData.getDbServerPort();
+		dataBase = sharedData.getDbBaseName();
+		user = sharedData.getDbUser();
+		pass = sharedData.getDbUserPass();
 		
 //		String url = "jdbc:postgresql://"+ ip + "/" + dataBase;
 		String url = "jdbc:mysql://"+ ip + ":" + port + "/" + dataBase;
@@ -50,6 +55,8 @@ private Connection conn;
 	
 	public ResultSet getResult(String query){
 		
+		MailWorker mailWorker = new MailWorker(sharedData);
+		String to;
 		ResultSet rs = null;
 		
 		query = "select * from users;";
@@ -59,7 +66,10 @@ private Connection conn;
 			rs = st.executeQuery(query);
 						
 			while (rs.next()) {
-				System.out.println("Użytkownik: " + rs.getString("username") + "@" + rs.getString("domain"));
+				to = rs.getString("username") + "@" + rs.getString("domain");
+				System.out.print("Próba wysyłki do: " + to);
+				mailWorker.createMail(to);
+				System.out.println(": poszło!");
 			}
 			
 		} catch (Exception e) {
