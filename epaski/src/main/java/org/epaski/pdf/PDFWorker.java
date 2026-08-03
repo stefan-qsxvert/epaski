@@ -11,7 +11,9 @@ public class PDFWorker {
 	public void myDocument() throws IOException {
 		PDDocument document = new PDDocument();
 		document.addPage(new PDPage());
+		document.getPage(0).setRotation(90);
 		document.save(new File("d:\\myPDF.pdf"), null);
+		document.getPage(0);
 		document.close();
 	}
 
