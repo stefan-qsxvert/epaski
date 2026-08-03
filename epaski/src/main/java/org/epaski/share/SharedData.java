@@ -15,7 +15,6 @@ public class SharedData {
 	
 	public SharedData() {
 		
-		
 	}
 
 	public String getMailUser() {
